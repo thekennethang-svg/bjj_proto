@@ -1,3 +1,6 @@
+import { useIntersectionReveal } from '../hooks/useIntersectionReveal';
+import SectionHeading from './SectionHeading';
+
 const PROGRAMS = [
   {
     name: 'Fundamentals',
@@ -38,40 +41,48 @@ const PROGRAMS = [
 ];
 
 export default function Programs() {
-  return (
-    <section id="programs" className="border-b border-border py-24 md:py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="mb-16">
-          <p className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
-            Training
-          </p>
-          <h2 className="font-black uppercase tracking-widest text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
-            What We Offer
-          </h2>
-          <p className="mt-5 text-text-secondary text-base md:text-lg max-w-xl">
-            Three structured programs designed to meet you at your current level and
-            move you forward.
-          </p>
-        </div>
+  const { ref, isVisible } = useIntersectionReveal({ threshold: 0.1 });
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PROGRAMS.map((program) => (
+  return (
+    <section
+      id="programs"
+      ref={ref}
+      className="border-b border-border py-24 md:py-32 bg-bg"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <SectionHeading
+          category="Training"
+          title="What We Offer"
+          subtitle="Three structured programs designed to meet you at your current level and move you forward."
+          isVisible={isVisible}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {PROGRAMS.map((program, index) => (
             <div
               key={program.name}
-              className="bg-surface border-t-2 border-accent border-x border-b border-border p-8 flex flex-col transition-colors duration-200 hover:bg-surface-hover"
+              style={{ transitionDelay: `${index * 120}ms` }}
+              className={`bg-surface border-t-2 border-accent border-x border-b border-border/80 p-8 md:p-10 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accent/60 hover-glow ${
+                isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
             >
               <h3 className="font-black uppercase tracking-widest text-white text-xl mb-3">
                 {program.name}
               </h3>
-              <p className="text-accent text-xs uppercase tracking-widest font-medium mb-5">
+              <p className="text-accent text-xs uppercase tracking-widest font-semibold mb-5">
                 {program.audience}
               </p>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              <p className="text-text-secondary text-sm leading-relaxed mb-8">
                 {program.description}
               </p>
-              <ul className="space-y-3 mt-auto">
+              <ul className="space-y-3.5 mt-auto">
                 {program.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-3 text-sm text-white">
+                  <li
+                    key={bullet}
+                    className="flex items-start gap-3 text-sm text-white/90"
+                  >
                     <svg
                       className="mt-0.5 shrink-0 text-accent"
                       width="16"

@@ -8,10 +8,35 @@
   }
 
   body {
-    @apply bg-bg text-white font-sans antialiased;
+    @apply bg-bg text-white font-sans antialiased selection:bg-accent selection:text-black;
+  }
+}
+
+@layer utilities {
+  /* Architectural hairline grid for atmospheric spatial depth */
+  .bg-hairline-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 80%);
   }
 
-  ::selection {
-    @apply bg-accent text-black;
+  /* Subtle card border glow on hover */
+  .hover-glow {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 25px -5px rgba(232, 197, 71, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

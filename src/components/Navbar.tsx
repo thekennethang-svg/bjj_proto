@@ -44,9 +44,16 @@ export default function Navbar({ onBookClick }: NavbarProps) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="font-black tracking-widest uppercase text-sm md:text-base text-white hover:text-accent transition-colors"
+          className="flex items-center py-1 group focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+          aria-label="Origin Brazilian Jiu Jitsu - Home"
         >
-          Origin BJJ
+          <img
+            src="/logo.png"
+            alt="Origin Brazilian Jiu Jitsu"
+            className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-all duration-200 group-hover:opacity-90 group-hover:scale-[1.02]"
+            loading="eager"
+            decoding="async"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

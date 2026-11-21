@@ -7,6 +7,7 @@ export default {
         bg: '#0A0A0A',
         surface: '#141414',
         'surface-hover': '#1c1c1c',
+        'surface-raised': '#1A1A1A',
         accent: '#E8C547',
         border: '#2A2A2A',
         'text-secondary': '#A0A0A0',
@@ -16,6 +17,15 @@ export default {
       },
       letterSpacing: {
         widest: '0.2em',
+      },
+      animation: {
+        'pulse-subtle': 'pulseSubtle 8s ease-in-out infinite',
+      },
+      keyframes: {
+        pulseSubtle: {
+          '0%, 100%': { opacity: '0.04' },
+          '50%': { opacity: '0.08' },
+        },
       },
     },
   },

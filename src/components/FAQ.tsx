@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useIntersectionReveal } from '../hooks/useIntersectionReveal';
+import SectionHeading from './SectionHeading';
 
 const FAQ_ITEMS = [
   {
@@ -33,23 +35,27 @@ const FAQ_ITEMS = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { ref, isVisible } = useIntersectionReveal({ threshold: 0.1 });
 
   return (
-    <section id="faq" className="border-b border-border py-24 md:py-32">
+    <section
+      id="faq"
+      ref={ref}
+      className="border-b border-border py-24 md:py-32 bg-bg"
+    >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="mb-16">
-          <p className="text-accent text-sm font-bold uppercase tracking-widest mb-4">
-            Answers
-          </p>
-          <h2 className="font-black uppercase tracking-widest text-white text-3xl sm:text-4xl md:text-5xl leading-tight">
-            Common Questions
-          </h2>
-          <p className="mt-5 text-text-secondary text-base md:text-lg max-w-xl">
-            Everything you might want to know before your first visit.
-          </p>
-        </div>
+        <SectionHeading
+          category="Answers"
+          title="Common Questions"
+          subtitle="Everything you might want to know before your first visit."
+          isVisible={isVisible}
+        />
 
-        <div className="max-w-3xl divide-y divide-border border-y border-border">
+        <div
+          className={`max-w-3xl divide-y divide-border border-y border-border transition-all duration-700 delay-150 ease-out ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           {FAQ_ITEMS.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -74,13 +80,19 @@ export default function FAQ() {
                       stroke="currentColor"
                       strokeWidth="2.5"
                     >
-                      <path d="M5 8l5 5 5-5" strokeLinecap="square" strokeLinejoin="miter" />
+                      <path
+                        d="M5 8l5 5 5-5"
+                        strokeLinecap="square"
+                        strokeLinejoin="miter"
+                      />
                     </svg>
                   </button>
                 </h3>
                 <div
                   className={`grid transition-all duration-300 ease-out ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0'
+                    isOpen
+                      ? 'grid-rows-[1fr] opacity-100 pb-6'
+                      : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
                   <div className="overflow-hidden">
