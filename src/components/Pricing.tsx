@@ -8,10 +8,10 @@ interface PricingProps {
 
 const MEMBERSHIP_BENEFITS = [
   'Unlimited classes (Gi and No-Gi)',
-  'Access to all program levels based on experience',
-  'Open mat sessions included',
-  'No contracts — cancel anytime',
-  'Gi uniform (kimono) available for purchase separately at the front desk',
+  'Full access to all 21+ weekly sessions across 7 days',
+  'All Open Mat and live sparring rounds included',
+  'No long-term contracts — cancel anytime',
+  'Clean loaner gear available for trial students',
 ];
 
 export default function Pricing({ onBookClick }: PricingProps) {
@@ -44,11 +44,11 @@ export default function Pricing({ onBookClick }: PricingProps) {
         >
           {/* Card with top accent bar, raised surface, and subtle hover glow */}
           <div className="bg-surface-raised border-t-2 border-accent border-x border-b border-border/80 p-8 md:p-10 transition-all duration-300 hover-glow hover:border-accent/50 hover:-translate-y-1">
-            <div className="flex items-center justify-between mb-4">
-              <p className="text-accent text-xs uppercase tracking-widest font-bold">
-                Unlimited Membership
-              </p>
-              <span className="text-[10px] uppercase tracking-widest text-white/70 bg-white/5 border border-white/10 px-2 py-0.5 font-medium">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <span className="inline-block text-accent text-[11px] uppercase tracking-widest font-black bg-accent/10 border border-accent/30 px-2.5 py-1">
+                ALL-INCLUSIVE MEMBERSHIP · 7 DAYS A WEEK
+              </span>
+              <span className="text-[10px] uppercase tracking-widest text-white/80 bg-white/5 border border-white/10 px-2 py-0.5 font-semibold self-start sm:self-auto">
                 No Contract
               </span>
             </div>

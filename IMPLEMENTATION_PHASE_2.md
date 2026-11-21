@@ -166,59 +166,59 @@ bjj_proto/
 Use this checklist to track execution across development sessions:
 
 ### Phase 1: Schedule & Timetable Architecture
-- [ ] **1.1 Timetable Data Model**
-  - [ ] Create `src/data/timetableData.ts` with all 24 classes from `timetable.jpg`
-  - [ ] Add tags: `Gi`, `No-Gi`, `Open Mat`, `Kids`
-  - [ ] Add day helper functions
-- [ ] **1.2 Timetable Component**
-  - [ ] Create `src/components/TimetableSection.tsx`
-  - [ ] Implement day-picker tabs (Mon through Sun)
-  - [ ] Implement category filter pills (All, Gi, No-Gi, Open Mat, Kids)
-  - [ ] Build responsive class cards with time, discipline, and booking link
-  - [ ] Add desktop weekly grid view option
-  - [ ] Add button to view original schedule image modal/lightbox
-- [ ] **1.3 Navbar Link Update**
-  - [ ] Add `Schedule` (`#schedule`) to `NAV_LINKS` in `src/components/Navbar.tsx`
+- [x] **1.1 Timetable Data Model**
+  - [x] Create `src/data/timetableData.ts` with all 24 classes from `timetable.jpg`
+  - [x] Add tags: `Gi`, `No-Gi`, `Open Mat`, `Kids`
+  - [x] Add day helper functions
+- [x] **1.2 Timetable Component**
+  - [x] Create `src/components/TimetableSection.tsx`
+  - [x] Implement day-picker tabs (Mon through Sun)
+  - [x] Implement category filter pills (All, Gi, No-Gi, Open Mat, Kids)
+  - [x] Build responsive class cards with time, discipline, and booking link
+  - [x] Add desktop weekly grid view option
+  - [x] Add button to view original schedule image modal/lightbox
+- [x] **1.3 Navbar Link Update**
+  - [x] Add `Schedule` (`#schedule`) to `NAV_LINKS` in `src/components/Navbar.tsx`
 
 ### Phase 2: Coach Spotlight
-- [ ] **2.1 Coach Profile Component**
-  - [ ] Create `src/components/CoachSpotlight.tsx`
-  - [ ] Integrate portrait `public/coach-nick.jpg` with dark athletic frame
-  - [ ] Add Professor Nick Roberts title, 3rd Degree Black Belt badge
-  - [ ] Add coaching philosophy quote and credentials (18+ yrs, 400+ students)
-  - [ ] Add CTA to book a trial class with Nick
+- [x] **2.1 Coach Profile Component**
+  - [x] Create `src/components/CoachSpotlight.tsx`
+  - [x] Integrate portrait `public/coach-nick.jpg` with dark athletic frame
+  - [x] Add Professor Nick Roberts title, 3rd Degree Black Belt badge
+  - [x] Add coaching philosophy quote and credentials (18+ yrs, 400+ students)
+  - [x] Add CTA to book a trial class with Nick
 
 ### Phase 3: Social Proof & Member Reviews
-- [ ] **3.1 Testimonials Data**
-  - [ ] Create `src/data/testimonialsData.ts` with 3 authentic member reviews
-- [ ] **3.2 Testimonials Component**
-  - [ ] Create `src/components/TestimonialsSection.tsx`
-  - [ ] Build Google 5.0 Rating banner with 5 gold stars
-  - [ ] Build 3-column review card grid with member names, experience level, and quotes
-  - [ ] Implement scroll reveal animation
+- [x] **3.1 Testimonials Data**
+  - [x] Create `src/data/testimonialsData.ts` with 3 authentic member reviews
+- [x] **3.2 Testimonials Component**
+  - [x] Create `src/components/TestimonialsSection.tsx`
+  - [x] Build Google 5.0 Rating banner with 5 gold stars
+  - [x] Build 3-column review card grid with member names, experience level, and quotes
+  - [x] Implement scroll reveal animation
 
 ### Phase 4: "What to Expect on Day One" Onboarding Flow
-- [ ] **4.1 Day One Component**
-  - [ ] Create `src/components/FirstVisitSteps.tsx`
-  - [ ] Layout 3 progressive steps: 1. Book Free Spot, 2. Arrive & Grab Gear, 3. Mat Time
-  - [ ] Add reassurance notes (clean loaner gis, zero ego, partner drilling)
-  - [ ] Add direct "Book Your Free Class" action
+- [x] **4.1 Day One Component**
+  - [x] Create `src/components/FirstVisitSteps.tsx`
+  - [x] Layout 3 progressive steps: 1. Book Free Spot, 2. Arrive & Grab Gear, 3. Mat Time
+  - [x] Add reassurance notes (clean loaner gis, zero ego, partner drilling)
+  - [x] Add direct "Book Your Free Class" action
 
 ### Phase 5: Sticky Mobile Action Bar & Pricing Polish
-- [ ] **5.1 Sticky Mobile Bar**
-  - [ ] Create `src/components/StickyMobileBar.tsx`
-  - [ ] Add scroll listener to show only below hero on mobile viewports
-  - [ ] Wire "Book Free Class" and "Get Directions" buttons
-  - [ ] Ensure safe area padding for iPhone home indicator
-- [ ] **5.2 Pricing Card Clarification**
-  - [ ] Add "ALL-INCLUSIVE MEMBERSHIP · NO CONTRACT" badge in `src/components/Pricing.tsx`
-  - [ ] Add note: "Includes all 24+ weekly Gi, No-Gi, Grappling & Open Mat sessions"
+- [x] **5.1 Sticky Mobile Bar**
+  - [x] Create `src/components/StickyMobileBar.tsx`
+  - [x] Add scroll listener to show only below hero on mobile viewports
+  - [x] Wire "Book Free Class" and "Get Directions" buttons
+  - [x] Ensure safe area padding for iPhone home indicator
+- [x] **5.2 Pricing Card Clarification**
+  - [x] Add "ALL-INCLUSIVE MEMBERSHIP · NO CONTRACT" badge in `src/components/Pricing.tsx`
+  - [x] Add note: "Includes all 24+ weekly Gi, No-Gi, Grappling & Open Mat sessions"
 
 ### Phase 6: Assembly & Verification
-- [ ] **6.1 App.tsx Assembly**
-  - [ ] Mount all new components in logical narrative order
-- [ ] **6.2 Testing & Quality Assurance**
-  - [ ] Run `npm run typecheck` (0 errors)
-  - [ ] Run `npm run build` (0 errors)
-  - [ ] Run `npm run lint` (0 errors)
-  - [ ] Verify desktop and mobile layout transitions
+- [x] **6.1 App.tsx Assembly**
+  - [x] Mount all new components in logical narrative order
+- [x] **6.2 Testing & Quality Assurance**
+  - [x] Run `npm run typecheck` (0 errors)
+  - [x] Run `npm run build` (0 errors)
+  - [x] Run `npm run lint` (0 errors)
+  - [x] Verify desktop and mobile layout transitions
